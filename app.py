@@ -14,7 +14,16 @@ file_path = "SalesData.csv"
 data = csv_to_list(file_path)
 print(data)  # Output the list
 
-( C = (F - 32) imes rac{5}{9} )
+def sale_total():
+        x = {row[0]: sum([int(x) for x in row[1:]]) for row in data[1:]}
+        return x
+sale_total()
+
+""" def location():
+
+    
+average_sales = map() """
+
 
 
 
