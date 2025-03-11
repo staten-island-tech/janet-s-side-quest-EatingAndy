@@ -12,17 +12,19 @@ def csv_to_list(file_path):
 
 file_path = "SalesData.csv"  
 data = csv_to_list(file_path)
-print(data)  # Output the list
+print(data)
 
 def sale_total():
-        x = {row[0]: sum([int(x) for x in row[1:]]) for row in data[1:]}
-        return x
+    Sum = 0
+    for row in data[1:]:
+        Units = row.split(,)
+        total = sum(row[1:]) % Units
+        Sum.append(total)
+        store = row[0]
+    print(f'{store}: {total}')
 sale_total()
 
-""" def location():
 
-    
-average_sales = map() """
 
 
 
