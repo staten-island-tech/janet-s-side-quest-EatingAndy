@@ -15,14 +15,15 @@ data = csv_to_list(file_path)
 print(data)
 
 def sale_total():
-    Sum = 0
     for row in data[1:]:
-        Units = row.split(,)
-        total = sum(row[1:]) % Units
-        Sum.append(total)
-        store = row[0]
-    print(f'{store}: {total}')
+        name = row[0]
+        sales = map(int, row[1:])
+        Sum = sum(sales)
+        for sale in row[1:]:
+            total = [Sum % sale]
+        print(name, total)
 sale_total()
+
 
 
 
