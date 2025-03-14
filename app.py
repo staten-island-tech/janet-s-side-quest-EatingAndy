@@ -14,21 +14,27 @@ file_path = "SalesData.csv"
 data = csv_to_list(file_path)
 print(data)
 
-def sale_total():
+def sale_average():
     for row in data[1:]:
         name = row[0]
         sales = map(int, row[1:])
         Sum = sum(sales)
         for sale in row[1:]:
-            total = [Sum % sale]
-        print(name, total)
-sale_total()
+            average = Sum % sale
+        print(name, average)
+sale_average()
 
-
-
-
-
-
+def listed():
+    for row in data[1:]:
+        name = row[0]
+        sales = map(int, row[1:])
+        Sum = sum(sales)
+        for sale in row[1:]:
+            average = Sum % sale
+            something = [].sort(key=lambda x: x[1],reverse=True)
+        something.append(average)
+        print(name, something)
+listed()
 
     
 
