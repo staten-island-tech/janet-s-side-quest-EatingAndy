@@ -25,13 +25,13 @@ def sale_average():
 sale_average()
 
 def listed():
+    something = [].sort(key=lambda x: x[1],reverse=True)
     for row in data[1:]:
         name = row[0]
         sales = map(int, row[1:])
         Sum = sum(sales)
         for sale in row[1:]:
             average = Sum % sale
-            something = [].sort(key=lambda x: x[1],reverse=True)
         something.append(average)
         print(name, something)
 listed()
