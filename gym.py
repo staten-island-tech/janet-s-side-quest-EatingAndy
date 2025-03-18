@@ -4,49 +4,22 @@ membership_plan = {
 }
 plan = input()
 duration = int(input())
-service = input()
-
-""" def membership():
-    if plan in membership_plan:
-        for key, value in membership_plan[plan].items():
-            print(key, value)
-    else:
-        print("Invalid plan.")
-
-membership()
-         """
-
-""" def membership():
-    if plan in membership_plan:
-        for key, value in membership_plan[plan].items():
-            if duration <= value:
-                value = value
-            else:
-                value = duration
-            print(key, value)
-membership() """
-
-membership_plan = {
-    "Basic": {"monthly fee": 20, "min_duration": 3, "service": []},
-    "Premium": {"monthly fee": 40, "min_duration": 6, "service": ["personal_trainer", "spa access"]}
-}
-
-plan = input()
-duration = int(input())
-service = input()
-
+service = input().split(',')
 def membership():
-    if plan in membership_plan:
-        for key, value in membership_plan[plan].items():
-            if key == "monthly fee":
-                total_cost = value * max(duration, membership_plan[plan]["min_duration"])
-                print(f"{key}: {value}, Total Cost: {total_cost}")
-            elif key == "service":
-                if service in value:
-                    print(f"Additional Service: {service}")
-                else:
-                    print(f"Service '{service}' is not available for the {plan} plan.")
-            else:
-                print(f"{key}: {value}")
+    for key, value in membership_plan.items():
+        if key == plan:
+            monthlyfee = value["monthly fee"]
+            minduration = value["min_duration"]
+            break
+    if duration <= minduration:
+            duration == minduration
     else:
-        print("Invalid plan.")
+            duration == duration
+    totalcost = monthlyfee * duration
+    print(f"Total cost before discounts: ${totalcost}")
+    if len(service) >= 2:  
+            totalcost *= 0.93
+    if duration >= 12: 
+            totalcost *= 0.9 
+    print(f"Total cost after discounts: ${totalcost}")             
+membership()
