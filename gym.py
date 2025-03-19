@@ -12,14 +12,14 @@ def membership():
             minduration = value["min_duration"]
             break
     if duration <= minduration:
-            duration == minduration
-    else:
-            duration == duration
+        duration == minduration
     totalcost = monthlyfee * duration
+    print(f"Purchase of {plan}, cost ${value['monthly fee']}")
+    print(f"Duration of {duration} month")
     print(f"Total cost before discounts: ${totalcost}")
     if len(service) >= 2:  
             totalcost *= 0.93
     if duration >= 12: 
-            totalcost *= 0.9 
+            totalcost *= 0.9     
     print(f"Total cost after discounts: ${totalcost}")             
 membership()
