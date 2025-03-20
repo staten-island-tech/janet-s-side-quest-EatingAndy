@@ -22,11 +22,11 @@ def sale_average():
         name = row[0]
         sales = map(int, row[1:])
         Sum = sum(sales)
-        for i in row[1:]:
-            if [','] == i:
-                sale = sale + 1
-                average = Sum % sale
-        print(name, average)
+        for i in sales:
+            if ',' in i:
+                sale += 1
+    average = Sum % sale
+    print(name, average)
 sale_average()
 
 """ def listed():
